@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .title {
+        background-color: gray;
+        color: pink;
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      .title:hover {
+        background-color: black;
+        color: red;
+        /* padding: 20px;
+            width: 250px;
+            text-align: center; */
+      }
+
+      .title:active {
+        background-color: skyblue;
+        color: red;
+      }
+
+      a:visited {
+        color: pink;
+      }
+
+      input {
+        padding: 10px;
+        border: 2px solid black;
+      }
+      input:focus {
+        background-color: lightgray;
+      }
+      input:focus-visible {
+        outline: none;
+      }
+
+      input[type="radio"]:checked {
+        /* width: 50px; */
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Min Ga Lar Par</h1>
+
+    <a href="https://cloud.google.com">Google Cloud</a>
+    <a href="https://google.com">To Google</a>
+
+    <br />
+    <br />
+
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+
+    <br /><br />
+
+    <input type="radio" name="gender" />
+    <input type="radio" name="gender" />
+    <input type="radio" name="gender" />
+  </body>
+</html>
