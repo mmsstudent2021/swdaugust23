@@ -1,109 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import "./_global.css";
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+@import "./_variables.css";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-}
+@import "./_utilities.css";
 
-/* css variables ( store data, reuse, overwrite ) */
+@import "./_body.css";
 
-:root{
-    --primary : #ff5959;
-    --secondary : #085f63;
-    --accent : #facf5a;
-}
+@import "./components/_btn.css";
 
-main {
-  padding: 20px;
-}
+@import "./components/_box.css";
 
-.main-heading {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
+@import "./components/_table.css";
 
-.box {
-  border: 1px solid black;
-  padding: 20px;
-  margin-bottom: 20px;
-}
 
-.box-title {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-}
 
-/* component class */
 
-.btn {
-  background-color: #b3b3b3;
-  border: 2px solid #b3b3b3;
-  padding: 0 24px;
-  height: 44px;
-  line-height: 44px;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
-  font-size: 0.8em;
-  text-decoration: none;
-  display: inline-block;
-}
 
-.btn-icon {
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  text-align: center;
-
-}
-
-/* utilities classes */
-
-.btn-primary {
-  background-color:  var(--primary) ;
-  border: 2px solid var(--primary);
-}
-
-.btn-secondary {
-  background-color: var(--secondary);
-  border: 2px solid var(--secondary);
-  /* color: var(--primary); */
-}
-
-.btn-accent {
-  background-color: var(--accent);
-  border: 2px solid var(--accent);
-}
-
-.btn-outline-primary {
-  background-color: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-outline-secondary {
-  background-color: transparent;
-  border: 2px solid var(--secondary);
-  color: var(--secondary);
-}
-
-.btn-outline-accent {
-  background-color: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-}
-
-.rounded {
-  border-radius: 8px;
-}
-
-.rounded-pill {
-  border-radius: 25px;
-}
