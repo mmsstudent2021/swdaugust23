@@ -42,6 +42,11 @@
   border: 2px solid var(--accent);
 }
 
+.btn-dark {
+  background-color: black;
+  border: 2px solid black;
+}
+
 .btn-outline-primary {
   background-color: transparent;
   border: 2px solid var(--primary);
