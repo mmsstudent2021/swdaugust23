@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 3000px;
+}
+
+.box{
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    /* position: relative; */
+}
+
+.obj{
+
+    /* padding: 50px; */
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+
+}
+
+.obj:nth-child(3){
+    background: skyblue;
+}
+
+.obj:nth-child(4){
+    background: pink;
+    /* position: relative;
+    top: 50px;
+    left: 30px; */
+    /* position: absolute;
+    bottom: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto; */
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    position: sticky;
+    top: 10px;
+}
+
+.obj:nth-child(5){
+    background: violet;
+}
