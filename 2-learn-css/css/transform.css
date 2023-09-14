@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+}
+
+
+.box{
+    border: 3px solid black;
+    /* width: 500px; */
+    /* height: 400px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 300px;
+    display: inline-block;
+
+}
+
+.box img {
+    width: 200px;
+    rotate: z 10deg;
+    transform-origin: 0% 0%;
+    /* border: 2px solid black; */
+    /* transform: translateX(-30px) translateY(-50px); */
+    /* transform: rotateZ(-20deg); */
+    /* transform: scale(0.6); */
+    /* transform: skew(20deg,10deg); */
+    /* transform: rotateY(10deg) rotateX(10deg); */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.45); */
+
+    /* translate: 100px 100px; */
+    /* scale: 0.5; */
+}
