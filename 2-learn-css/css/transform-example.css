@@ -46,9 +46,21 @@ header{
     padding: 10px 15px;
 }
 
-.menu-btn:focus+.nav-menu{
-    display: block;
+.menu-btn:focus+.nav-menu,.menu-btn.active+.nav-menu{
+    transform: translateX(0);
+    /* opacity: 1;
+    translate: 0;
+    scale: 1; */
+    /* transform: translateX(0) scale(1); */
+
+    /* transform: rotate(0deg); */
+
+    /* opacity: 1;
+    pointer-events: all; */
+
+
 }
+
 
 
 .nav-menu{
@@ -61,7 +73,24 @@ header{
     padding: 150px 20px;
     z-index: 1;
     border-left: 3px solid black;
-    display: none;
+    
+/* 
+    opacity: 0;
+    transition: 500ms;
+    pointer-events: none; */
+
+    /* transform: rotate(90deg);
+    transform-origin: -28% 85%;
+    transition: 0.5s; */
+
+
+    transform: translateX(100%);
+    transition: 500ms;
+    /* transform: translateX(100%) scale(0); */
+    /* translate: 100%;
+    scale: 0;
+    transition: 500ms; */
+    /* opacity: 0; */
 }
 .nav-link{
     display: block;
@@ -70,6 +99,14 @@ header{
     margin-bottom: 20px;
     font-size: 1.3em;
     font-weight: bold;
+    padding: 10px;
+
+
+}
+
+.nav-link.active{
+    background-color: #000;
+    color: white;
 }
 
 .box{
@@ -78,4 +115,82 @@ header{
 
 .box p {
     margin-bottom: 20px;
+}
+
+.dropdown{
+    display: inline-block;
+    position: relative;
+}
+.dropdown-btn{
+    background-color: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: relative;
+}
+
+.dropdown-btn:focus+.dropdown-menu{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+
+}
+
+/* .dropdown-btn .fa-angle-up{
+    rotate: 0deg;
+    transition: 500ms;
+}
+
+.dropdown-btn:focus .fa-angle-up{
+    rotate: 180deg;
+} */
+
+.dropdown-btn::after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f068";
+    font-weight: 900;
+    transition: 300ms;
+    /* width: 10px;
+    height: 10px;
+    background-color: red; */
+    /* position: absolute;
+    rotate: z 0deg;
+    transition: 300ms; */
+}
+
+.dropdown-btn:focus::after{
+    /* rotate: z 45deg; */
+    content: "\2b";
+    
+}
+
+.dropdown-menu{
+    border: 2px solid black;
+    padding: 10px;
+    position: absolute;
+    /* right: -170px; */
+    top: 100%;
+    left: 0;
+    background-color: white;
+    width: 170px;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity, transform;
+    transition-duration: 200ms, 500ms;
+    transform: translateY(20px);
+}
+
+
+
+.dropdown-link{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em;
+}
+
+.dropdown-link.active{
+    background-color: #000;
+    color: white;
 }
