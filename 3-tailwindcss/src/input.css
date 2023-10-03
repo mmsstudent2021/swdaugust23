@@ -3,3 +3,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .check-box {
+    appearance: none;
+
+    border: 3px solid blue;
+    width: 20px;
+    height: 20px;
+}
+
+.check-box:checked{
+    background: skyblue;
+} */
+
+.check-box {
+  @apply appearance-none;
+  @apply border-[3px] border-solid border-blue-600;
+  @apply w-[20px] h-[20px];
+
+  &:checked {
+    @apply bg-orange-200;
+  }
+}
+
+.switch {
+  @apply appearance-none;
+
+  @apply w-[150px] h-[60px] relative rounded-full border-4  border-blue-600 duration-500;
+
+  &::before {
+    content: "";
+    @apply absolute bg-red-600 rounded-full top-[6px] left-[6px] w-[40px] h-[40px] duration-500;
+  }
+
+  &:checked {
+    @apply bg-blue-300;
+
+    &::before {
+      @apply translate-x-[90px];
+    }
+  }
+}
