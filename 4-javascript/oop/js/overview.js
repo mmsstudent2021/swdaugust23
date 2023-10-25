@@ -53,15 +53,30 @@ class Student extends Person {
   }
 }
 
-const st1 = new Student("Zaw Zaw", 1996, "male", "web", ["html", "css", "js"]);
-console.log(st1);
+// const st1 = new Student("Zaw Zaw", 1996, "male", "web", ["html", "css", "js"]);
+// console.log(st1);
 
-const st2 = new Student("Mya Mya", 2000, "female", "android", [
-  "java",
-  "kotlin",
-]);
+// const st2 = new Student("Mya Mya", 2000, "female", "android", [
+//   "java",
+//   "kotlin",
+// ]);
 
-console.log(st2);
+class Monitor extends Student {
+  constructor(
+    inputName,
+    inputDob,
+    inputGender,
+    inputMajor,
+    inputSubject,
+    roomNo
+  ) {
+    super(inputName, inputDob, inputGender, inputMajor, inputSubject);
+    this.roomNo = roomNo;
+  }
+}
+
+const m1 = new Monitor("Aung Aung", "1999-3-20", "male", "web", [], "SWDAUG23");
+// console.log(m1);
 
 // const p1 = new Person("Kyaw Kyaw", "1995", "male");
 // console.log(p1);
@@ -95,3 +110,118 @@ console.log(st2);
 // console.log(p2);
 
 // console.log(Person);
+
+// 00P - access modifier
+
+// console.log(m1.name);
+
+// class Sample {
+//   a = "aaa";
+//   #x = "xxx";
+
+//   b(){
+//     return "b method"
+//   }
+
+//   #y(){
+//     return "y method"
+//   }
+// }
+
+// const sample = new Sample;
+// console.log(sample);
+// console.log(sample.a);
+// console.log(sample.#x);
+// console.log(sample.b());
+// console.log(sample.#y());
+
+class BankAccount {
+  #balance = 0;
+  #transition = [];
+  #transitionIndex = 0;
+
+  // getter, setter
+
+  checkTransition() {
+    return this.#transition;
+  }
+
+  checkBalance() {
+    return this.#balance;
+  }
+
+  deposit(amount) {
+    this.#transition[this.#transitionIndex++] = `U deposit ${amount}`;
+    this.#balance += amount;
+  }
+
+  withdraw(amount) {
+    if (amount <= this.#balance) {
+      this.#transition[this.#transitionIndex++] = `U withdraw ${amount}`;
+      return (this.#balance -= amount);
+    }
+    this.#transition[this.#transitionIndex++] = `Not enough amount`;
+    return "Not enough amount";
+  }
+
+  constructor(owner, phone) {
+    this.owner = owner;
+    this.phone = phone;
+    this.accountNumber = this.owner + this.phone;
+  }
+}
+
+const myBankAccount = new BankAccount("HHZ", "09123234");
+// console.log(myBankAccount);
+
+myBankAccount.deposit(1000);
+myBankAccount.deposit(500);
+myBankAccount.withdraw(30);
+
+myBankAccount.deposit(2500);
+
+myBankAccount.withdraw(500);
+myBankAccount.withdraw(50000);
+
+// console.log(myBankAccount.checkBalance());
+// console.table(myBankAccount.checkTransition());
+
+class A {
+  #x = "xxx";
+  y = "yyy";
+}
+
+class B extends A {
+  z() {
+    return this.y;
+  }
+}
+
+const b = new B();
+// console.log(b.z());
+
+class C {
+  static a = "aaa";
+
+  b = "bbb";
+
+  static x() {
+    return "x method";
+  }
+
+  y() {
+    return "y method";
+  }
+}
+
+
+console.dir(C);
+
+console.log(C.a);
+console.log(C.x());
+
+
+// const c = new C;
+// console.log(c);
+// console.log(c.a);
+// console.log(c.x());
