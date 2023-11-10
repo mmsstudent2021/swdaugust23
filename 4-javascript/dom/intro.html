@@ -4,16 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Input Output</title>
-
   </head>
   <body>
-    <h1 id="heading">San Kyi Tar</h1>
+    <h1
+      id="heading"
+      class="x y z"
+    >
+      San Kyi Tar
+    </h1>
     <p id="para">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
       distinctio consequatur veniam. Nulla voluptas, accusamus similique harum,
       natus accusantium est ad doloribus voluptatum, eligendi incidunt dolore
       recusandae quasi praesentium sint!
     </p>
+
+    <button onclick="imgZoomIn()">-</button>
+
+    <button onclick="imgZoomOut()">+</button>
+
+    <br />
+
+    <img
+      id="poeImg"
+      height="200"
+      style="border: 3px solid black; margin-bottom: 20px"
+      src="./images/poe-mamhe-thar-2.jpg"
+      alt=""
+    />
+
+    <br />
 
     <a id="googleLink" href="https://google.com" target="_blank">Google</a>
     <a id="mmsLink" href="https://mms-it.com" target="_self">MMS IT</a>
@@ -25,11 +45,15 @@
       <li>Banana</li>
     </ul>
 
-    <input id="input" type="text" />
-    
+    <input id="input" type="file" multiple/>
+
     <button id="btn" onclick="addList()">Click Me</button>
 
-    <script src="./js/intro.js"></script>
+    <br>
+    <br>
+    <br>
+    <br>
 
+    <script src="./js/intro.js"></script>
   </body>
 </html>
