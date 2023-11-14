@@ -6,12 +6,7 @@
     <title>Basic Input Output</title>
   </head>
   <body>
-    <h1
-      id="heading"
-      class="x y z"
-    >
-      San Kyi Tar
-    </h1>
+    <h1 id="heading" class="x y z">San Kyi Tar</h1>
     <p id="para">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
       distinctio consequatur veniam. Nulla voluptas, accusamus similique harum,
@@ -35,24 +30,60 @@
 
     <br />
 
-    <a id="googleLink" href="https://google.com" target="_blank">Google</a>
-    <a id="mmsLink" href="https://mms-it.com" target="_self">MMS IT</a>
+    <div>
+      <a id="googleLink" href="https://google.com" target="_blank">Google</a>
+      <a id="mmsLink" href="https://mms-it.com" target="_self">MMS IT</a>
+    </div>
+    <br>
 
-    <ul id="listGroup">
-      <li>Apple</li>
-      <li>Orange</li>
-      <li>Mango</li>
-      <li>Banana</li>
+    <select name="nation" id="">
+
+      <option value="mm">Myanmar</option>
+      <option value="jp">Japan</option>
+      <option value="kr">Korea</option>
+      <option value="ch">China</option>
+
+    </select>
+
+    <br>
+    <br>
+
+    <div class="">
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="male">Male</label>
+
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="female">Female</label>
+
+      <input type="radio" name="gender" id="gay" value="gay">
+      <label for="gay">Gay</label>
+    </div>
+
+    <ul id="fruitList">
+      <li class="fruit">Apple</li>
+      <li class="fruit">Orange</li>
+      <li class="fruit">Mango</li>
+      <li class="fruit">Banana</li>
     </ul>
 
-    <input id="input" type="file" multiple/>
+    <ul id="listGroup">
+      <li class="st">kyaw kyaw</li>
+      <li class="st">aung aung</li>
+      <li class="st">su su</li>
+      <li class="st">hla hla</li>
+    </ul>
+
+    <p class="fruit">lemon</p>
+    <p class="fruit">lime</p>
+
+    <input id="input" type="file" multiple />
 
     <button id="btn" onclick="addList()">Click Me</button>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <br />
+    <br />
+    <br />
+    <br />
 
     <script src="./js/intro.js"></script>
   </body>

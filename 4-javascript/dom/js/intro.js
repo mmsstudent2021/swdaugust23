@@ -23,12 +23,20 @@
 const heading = document.getElementById("heading");
 const para = document.getElementById("para");
 const googleLink = document.getElementById("googleLink");
-const listGroup = document.getElementById("listGroup");
+// const listGroup = document.getElementById("listGroup");
 const input = document.getElementById("input");
 const btn = document.getElementById("btn");
 const poeImg = document.getElementById("poeImg");
+const fruitList = document.querySelector("#fruitList");
+
+const radios = document.querySelectorAll("[name='gender']")
+
+// console.log(radios);
+
 // const lis = document.getElementsByTagName("li");
 // const lis = document.querySelectorAll("li");
+
+// const lis = document.querySelectorAll("#fruitList .fruit");
 
 // console.log(lis);
 
