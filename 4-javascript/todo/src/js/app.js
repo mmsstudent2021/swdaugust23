@@ -13,29 +13,34 @@ const listGroup = document.querySelector("#listGroup");
 
 const listCounter = () => {
   const total = document.querySelectorAll(".list").length;
+  const totalChecked = document.querySelectorAll(".list-check:checked").length;
   listCount.innerText = total;
+  doneCount.innerText = totalChecked
   //   console.log(total);
   return total;
 };
 
 const createList = (text) => {
   const list = document.createElement("div");
+  // const id = "listCheck"+(Math.random() * 1000000).toFixed(0)
+  const id = "listCheck" + Date.now();
   list.classList.add("list");
   list.innerHTML = `
-    <div class="border p-3 mb-3 border-neutral-600 flex justify-between items-center">
+    <div class="group border p-3 mb-3 overflow-hidden border-neutral-600 flex justify-between items-center">
               <div class="content">
-                <input type="checkbox" id="flower" />
-                <label for="flower" class="text-sm"> ${text} </label>
+              <input type="checkbox" class='list-check accent-gray-600' id="${id}" />
+                <label for="${id}" class="text-sm list-text"> ${text} </label>
+                
               </div>
-              <div class="control flex items-center gap-1">
-                <button>
+              <div class="control  opacity-0 group-hover:opacity-100 duration-300 pointer-events-none group-hover:translate-x-0 translate-x-[160%] group-hover:pointer-events-auto flex items-center gap-1">
+                <button class='edit-btn active:scale-75 duration-100'>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-4 h-4"
+                    class="w-4 h-4 stroke-1"
                   >
                     <path
                       stroke-linecap="round"
@@ -45,14 +50,14 @@ const createList = (text) => {
                   </svg>
                 </button>
 
-                <button class="del-btn">
+                <button class="del-btn active:scale-75 duration-100">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-4 h-4"
+                    class="w-4 h-4 stroke-1"
                   >
                     <path
                       stroke-linecap="round"
@@ -74,6 +79,39 @@ const createList = (text) => {
       listCounter();
     }
   });
+
+  const content = list.querySelector(".content");
+  const editBtn = list.querySelector(".edit-btn");
+
+  editBtn.addEventListener("click", () => {
+    const listText = list.querySelector(".list-text");
+    const input = document.createElement("input");
+    input.className =
+      "border border-neutral-600 focus-visible:outline-none text-sm px-3 py-1";
+    input.value = listText.innerText;
+    content.innerHTML = "";
+    content.append(input);
+
+    input.addEventListener("blur", () => {
+      console.log("esc");
+
+      content.innerHTML = `
+
+      <input type="checkbox" id="flower" />
+      <label for="flower" class="text-sm list-text"> ${input.value} </label>
+      
+      `;
+    });
+  });
+
+  const listCheck = list.querySelector(".list-check");
+  listCheck.addEventListener("change",() => {
+    console.log("check");
+    const listText = list.querySelector(".list-text");
+    listText.classList.toggle("line-through");
+    listCounter();
+
+  })
 
   return list;
 };
