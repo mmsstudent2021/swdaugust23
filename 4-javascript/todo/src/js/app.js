@@ -8,6 +8,7 @@ const btnAdd = document.querySelector("#btnAdd");
 const doneCount = document.querySelector("#doneCount");
 const listCount = document.querySelector("#listCount");
 const listGroup = document.querySelector("#listGroup");
+const delAll = document.querySelector("#delAll");
 
 // function
 
@@ -15,7 +16,7 @@ const listCounter = () => {
   const total = document.querySelectorAll(".list").length;
   const totalChecked = document.querySelectorAll(".list-check:checked").length;
   listCount.innerText = total;
-  doneCount.innerText = totalChecked
+  doneCount.innerText = totalChecked;
   //   console.log(total);
   return total;
 };
@@ -26,7 +27,7 @@ const createList = (text) => {
   const id = "listCheck" + Date.now();
   list.classList.add("list");
   list.innerHTML = `
-    <div class="group border p-3 mb-3 overflow-hidden border-neutral-600 flex justify-between items-center">
+    <div class="group animate__animated animate__fadeInUp border p-3 mb-3 overflow-hidden border-neutral-600 flex justify-between items-center">
               <div class="content">
               <input type="checkbox" class='list-check accent-gray-600' id="${id}" />
                 <label for="${id}" class="text-sm list-text"> ${text} </label>
@@ -105,13 +106,12 @@ const createList = (text) => {
   });
 
   const listCheck = list.querySelector(".list-check");
-  listCheck.addEventListener("change",() => {
+  listCheck.addEventListener("change", () => {
     console.log("check");
     const listText = list.querySelector(".list-text");
     listText.classList.toggle("line-through");
     listCounter();
-
-  })
+  });
 
   return list;
 };
@@ -125,5 +125,13 @@ const btnAddHandler = () => {
   }
 };
 
+const delAllHandler = () => {
+  if(confirm("Are U sure to delete all ?")){
+    const lists = app.querySelectorAll(".list");
+    lists.forEach(list => list.remove())
+  }
+};
+
 // event listener
 btnAdd.addEventListener("click", btnAddHandler);
+delAll.addEventListener("click", delAllHandler);
